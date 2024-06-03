@@ -1,9 +1,10 @@
 import {TodoItem} from '@/components/TodoItem';
 import {prisma} from '@/db';
 import Link from 'next/link';
+import {redirect} from 'next/navigation';
 
 export default async function Home() {
-  let todos = await getTodos();
+  const todos = await getTodos();
   function getTodos() {
     return prisma.todo.findMany();
   }
@@ -20,6 +21,7 @@ export default async function Home() {
     console.log(todos);
     await prisma.todo.delete({where: {id}});
     console.log(todos);
+    redirect('./');
   }
 
   return (
