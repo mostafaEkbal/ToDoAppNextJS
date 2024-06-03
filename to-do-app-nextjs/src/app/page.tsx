@@ -33,7 +33,7 @@ export default async function Home() {
           New
         </Link>
       </header>
-      <ul className='pl-4'>
+      <ul className='flex flex-col gap-3 pl-4'>
         {todos.map(todo => (
           <TodoItem
             key={todo.id}

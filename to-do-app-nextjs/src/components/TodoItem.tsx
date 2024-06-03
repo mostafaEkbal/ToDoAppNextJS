@@ -16,7 +16,7 @@ export function TodoItem({
   deleteTodo,
 }: TodoItemProps) {
   return (
-    <li className='flex gap- items-center'>
+    <li className='flex gap-2 items-center'>
       <input
         type='checkbox'
         id={id}
@@ -33,7 +33,7 @@ export function TodoItem({
       </label>
       <button
         onClick={e => deleteTodo(id)}
-        className='ml-4 border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none'
+        className='ml-4 border border-slate-300 text-slate-300 px-1 py-[1px] rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none'
       >
         Delete
       </button>
