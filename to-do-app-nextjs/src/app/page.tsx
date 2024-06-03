@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {redirect} from 'next/navigation';
 
 export default async function Home() {
-  let todos = await getTodos();
+  const todos = await getTodos();
   function getTodos() {
     return prisma.todo.findMany();
   }
