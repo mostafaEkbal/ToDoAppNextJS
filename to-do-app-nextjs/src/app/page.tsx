@@ -1,5 +1,6 @@
 import {TodoItem} from '@/components/TodoItem';
 import {prisma} from '@/db';
+import {revalidateTag} from 'next/cache';
 import Link from 'next/link';
 import {redirect} from 'next/navigation';
 
@@ -19,7 +20,8 @@ export default async function Home() {
     'use server';
 
     await prisma.todo.delete({where: {id}});
-    redirect('./');
+    // redirect('./');
+    revalidateTag('todos');
   }
 
   return (
