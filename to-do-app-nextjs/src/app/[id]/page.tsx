@@ -12,11 +12,12 @@ export default async function Page({params}: any) {
 
   return (
     <div>
-      <h1 className='mb-6'>Task</h1>
+      <h1 className='mb-5'>Task</h1>
       <div className='flex gap-5 flex-col'>
         <h3>{todo?.title}</h3>
+        <h3>{todo?.id}</h3>
         <Link href='/'>
-          <button className='ml-4 border border-slate-300 text-slate-300 px-1 py-[1px] rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none'>
+          <button className=' border border-slate-300 text-slate-300 px-1 py-[1px] rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none'>
             {' '}
             go back
           </button>
